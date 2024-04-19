@@ -60,7 +60,10 @@ export default {
   },
   methods: {
     deleteProduct(id) {
-      this.products = this.products.filter(product => product.id !== id);
+      if(confirm("Are you sure you want to delete this product?")){
+        // this.$emit('delete product',id);
+        this.products = this.products.filter(product => product.id !== id);
+      }
     },
   },
 };
